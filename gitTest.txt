@@ -1,0 +1,27 @@
+Linux下通过git将文件push github上
+---------------------------------------------------------------------------------------
+可以先在github创建Git仓库
+
+mkdir filename --创建文件夹
+cd filename --切换目录
+pwd  --查看目录
+
+git init  --本地初始化空的文件夹有.git文件生成
+
+ls -ah --查看.git文件是否存在
+
+git add 文件 --添加文件
+
+git commit -m "备注"
+
+git remote add origin git@github.com:KeaNoel/gitTest.git --根据github提示的,在本地的 filename仓库下运行命令
+
+su - root --切换成root获取权限
+
+cd filename --切换目录
+
+pwd --再次查看目录
+
+ls -ah --可选择查看.git文件是否在
+
+git push origin master --将文件上传
