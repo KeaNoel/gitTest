@@ -1,6 +1,9 @@
-Linux下通过git将文件push github上
----------------------------------------------------------------------------------------
-可以先在github创建Git仓库
+--------------Linux下通过git将文件push github上--------------------
+由于做了root免密码登陆处理，登入之前则不需要输入用户名和密码,不过要切换成root权限进行push
+
+首先在github创建Git仓库
+
+在本地建立文件夹生成.git文件
 
 mkdir filename --创建文件夹
 cd filename --切换目录
@@ -14,7 +17,9 @@ git add 文件 --添加文件
 
 git commit -m "备注"
 
-git remote add origin git@github.com:KeaNoel/gitTest.git --根据github提示的,在本地的 filename仓库下运行命令
+git@github.com:KeaNoel/gitTest.git
+
+git remote add origin +github生成的SSH或者Https地址  --在本地下的 filename仓库下运行命令,将本地仓库和远程仓库进行关联；
 
 su - root --切换成root获取权限
 
@@ -25,3 +30,37 @@ pwd --再次查看目录
 ls -ah --可选择查看.git文件是否在
 
 git push origin master --将文件上传
+
+
+------------------------Windows篇---------------------------------------------------------------------
+总结：
+git init 
+
+git add 
+
+git commit -m ""
+
+git add origin + 地址
+
+git push orgin master
+
+
+
+
+
+
+
+----------版本回退------------
+
+git log --现实最近到最远的提交日志，每一次提交都有对应的commit id和commit message
+
+git log --pretty=oneline       --(可加参数避免信息杂乱无章)
+
+git reset --heard id           --（根据id回退到指定的版本）
+
+git push origin HEAD --force   --（推送到服务器）
+
+git reflog  		      --（查看命令操作的历史）
+
+
+
