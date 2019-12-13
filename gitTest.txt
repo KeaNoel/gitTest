@@ -17,8 +17,6 @@ git add 文件 --添加文件
 
 git commit -m "备注"
 
-git@github.com:KeaNoel/gitTest.git
-
 git remote add origin +github生成的SSH或者Https地址  --在本地下的 filename仓库下运行命令,将本地仓库和远程仓库进行关联；
 
 su - root --切换成root获取权限
@@ -32,8 +30,9 @@ ls -ah --可选择查看.git文件是否在
 git push origin master --将文件上传
 
 
-------------------------Windows篇---------------------------------------------------------------------
 总结：
+
+----------------------Windows篇------------------------
 git init 
 
 git add 
@@ -44,13 +43,7 @@ git add origin + 地址
 
 git push orgin master
 
-
-
-
-
-
-
-----------版本回退------------
+-------------------------------------------版本回退---------------------------
 
 git log --现实最近到最远的提交日志，每一次提交都有对应的commit id和commit message
 
@@ -62,5 +55,28 @@ git push origin HEAD --force   --（推送到服务器）
 
 git reflog  		      --（查看命令操作的历史）
 
+-------------------------------------------分支管理---------------------------
+查看分支
+git branch
+
+创建分支
+git branch <name>
+
+切换分支
+git checkout <name> 或者 git switch name
+
+创建+切换分支：git checkout -b <name> 或者 git switch -c <name>
+
+合并某分支到当前分支：git merge <name>
+
+删除分支：git branch -d <name>
+
+强制删除分支：git branch -D <name>
+
+查看分支合并图：git log --graph
+
+查看远程信息：git remote -v
+
+从本地推送分支：git push origin branch-name,如果推送失败，用git pull抓远程
 
 
