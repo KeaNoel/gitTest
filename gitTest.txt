@@ -55,6 +55,10 @@ git push origin HEAD --force   --（推送到服务器）
 
 git reflog  		      --（查看命令操作的历史）
 
+git diff                       --（比较版本之间的差异）
+
+
+
 -------------------------------------------分支管理---------------------------
 查看分支
 git branch
@@ -77,6 +81,19 @@ git checkout <name> 或者 git switch name
 
 查看远程信息：git remote -v
 
-从本地推送分支：git push origin branch-name,如果推送失败，用git pull抓远程
+从本地推送分支：git push origin branch-name,如果推送失败，用git pull抓远程（从远程仓库获取最新版本并合并到本地）
 
+-------------------------------------------标签管理---------------------------
+git tag <tagname> 用于新建一个标签，默认尾HEAD,也可以指定一个commit id;
 
+命令 git tag -a<tagname> -m "sdfdsfsdf..."可以指定标签信息
+
+git tag 可以查看所有标签
+ 
+git push origin <tagname>可以推送一个本地标签
+
+git push origin --tages 可以推送全部未推送的本地标签
+
+git tag -d <tagname> 可以删除一个本地标签
+
+git push origin :refs/tags/<tagname> 可以删除一个远程标签
